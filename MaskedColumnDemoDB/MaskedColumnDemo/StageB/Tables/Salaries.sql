@@ -1,0 +1,7 @@
+CREATE TABLE [StageB].[Salaries]
+(
+  [Id] INT NOT NULL PRIMARY KEY
+  ,[EmployeeID] INT NOT NULL
+  ,[Period] NVARCHAR(6) NOT NULL
+  , [Salary] NUMERIC(15,4) NOT NULL DEFAULT(0.0)
+)

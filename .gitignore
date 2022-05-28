@@ -1,0 +1,6 @@
+*.tfvars
+
+# Folders from SQL Server Database project
+obj
+bin
+assets
