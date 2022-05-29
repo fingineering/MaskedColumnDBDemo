@@ -1,5 +1,4 @@
-CREATE TABLE [StageA].[Employee
-] (
+CREATE TABLE [StageA].[Employee] (
     [EmployeeId] INT NOT NULL PRIMARY KEY
     , [sex] NVARCHAR(6) MASKED WITH (FUNCTION = 'partial(0,"x",2)')
     , [FirstName] NVARCHAR(50) MASKED WITH (FUNCTION = 'default()')
