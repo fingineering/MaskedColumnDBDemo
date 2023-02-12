@@ -28,7 +28,7 @@ resource "azurerm_mssql_server" "maskeddemodbserver" {
 
 # create a SQL Database as a service
 resource "azurerm_mssql_database" "maskeddemodb" {
-  name      = "maskeddemodb"
+  name      = "MaskedColumnDemo"
   server_id = azurerm_mssql_server.maskeddemodbserver.id
   collation = "SQL_Latin1_General_CP1_CI_AS"
   #license_type   = "LicenseIncluded"

@@ -41,6 +41,11 @@ output "current_ip" {
   value = local.my_ip
 }
 
+output "database-adress" {
+  value = azurerm_mssql_server.maskeddemodbserver.fully_qualified_domain_name
+  description = "Server to connect Azure Data Studio to"
+}
+
 # Get the resource group for the project under terraform control
 resource "azurerm_resource_group" "rg-maskeddemo" {
   name     = "rg-maskeddemo"
