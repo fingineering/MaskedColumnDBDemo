@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">2.60"
+      version = ">3.40"
     }
     curl = {
       source  = "anschoewe/curl"
@@ -10,13 +10,6 @@ terraform {
     }
   }
   # define backend for collaboration
-  backend "azurerm" {
-    resource_group_name  = "rg-maskeddemo"
-    storage_account_name = "terraformstate"
-    container_name       = "tfstate"
-    # The key is not allowed as a variable in the backend
-    #key = var.ACCKEY
-  }
 }
 
 provider "azurerm" {
@@ -26,7 +19,7 @@ provider "azurerm" {
     }
   }
 
-  subscription_id = var.subscription
+  subscription_id = var.SUBSCRIPTION
 }
 
 # get the curreent ip adress to modify network rules
@@ -37,6 +30,8 @@ data "curl" "getIp" {
   http_method = "GET"
   uri         = "https://api.ipify.org"
 }
+
+data "azurerm_client_config" "current" {}
 
 locals {
   my_ip = data.curl.getIp.response
