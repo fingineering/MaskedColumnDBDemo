@@ -1,5 +1,7 @@
 *.tfvars
-
+.terraform 
+*.tfstate
+*.tfstate*
 # Folders from SQL Server Database project
 obj
 bin
