@@ -15,5 +15,11 @@ GO
 ALTER ROLE [db_datareader] ADD MEMBER [demoUser];
 GO
 
+ALTER ROLE [db_datawriter] ADD MEMBER [demoUser];
+GO
+
 GRANT EXECUTE ON SCHEMA::Integration TO [demoUser];
+GO
+
+GRANT VIEW DEFINITION TO [demoUser];
 GO
